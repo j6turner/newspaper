@@ -1,27 +1,23 @@
-<body>
+<h1>Newspaper Maintainance</h1>
+<hr noshade/>
 
-  <h1>Newspaper Maintainance</h1>
-  <hr noshade/>
+<div ng-show="sections.length">
+  <h2>Newspaper Sections</h2>
+  <ul>
+    <li ng-repeat="item in sections">
+      <a ui-sref="sections.reporters({ sectionID: item.id })">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>
 
-  <div ng-show="sections.length">
-    <h2>Newspaper Sections</h2>
-    <ul>
-      <li ng-repeat="item in sections">
-        <a ui-sref="sections.reporters({ sectionID: item.id })">{{ item.name }}</a>
-      </li>
-    </ul>
-  </div>
+<div id="sections" class="col-md-6">
+  <h3>Add a new section:</h3>
+    <form ng-submit="SectionsFactory.addSections()" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="SectionsFactory.sectionName" class="form-control" placeholder="Arts & Culture">
+      </div>
+      <button type="submit" class="btn btn-default">Add Section</button>
+    </form>
+</div>
 
-  <div id="sections" class="col-md-6">
-    <h3>Add a new section:</h3>
-      <form ng-submit="SectionsFactory.addSections()" class="form-inline" role="form">
-        <div class="form-group">
-          <input type="text" ng-model="SectionsFactory.sectionName" class="form-control" placeholder="Arts & Culture">
-        </div>
-        <button type="submit" class="btn btn-default">Add Section</button>
-      </form>
-  </div>
-
-  <div ui-view></div>
-
-</body>
+<div ui-view></div>
