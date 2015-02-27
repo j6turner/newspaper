@@ -1,0 +1,25 @@
+<body>
+
+  <h1>Newspaper Maintainance</h1>
+  <hr noshade/>
+
+  <div ng-show="section.reporters.length">
+    <h2>{{ section.name }} Reporters</h2>
+    <ul>
+      <li ng-repeat="item in section.reporters">
+        {{ item.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div id="addReporter">
+    <h2>Assign a reporter to the {{ section.name }} section:</h2>
+    <form ng-submit="addReporter()" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="reporterName" class="form-control" placeholder="Howard Beale"
+      </div>
+      <button type="submit" class="btn btn-danger">Add Reporter</button>
+    </form>
+  </div>
+
+</body>
