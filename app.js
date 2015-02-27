@@ -1,4 +1,4 @@
-var newspaperMaintainer = angular.module('newspaperMaintainer', [ui.router]);
+var newspaperMaintainer = angular.module("newspaperMaintainer", ["ui.router"]);
 
 newspaperMaintainer.config(function($stateProvider) {
 
