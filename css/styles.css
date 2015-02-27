@@ -1,0 +1,27 @@
+}body {
+  border: 2px solid #2D2D2D;
+  padding: 15px 15px 15px 15px;
+  background-color: #E0E0E0;
+}
+
+h1 {
+  font-family: Helvetica;
+  color: #A30000;
+  text-align: center;
+}
+
+h2 {
+  font-family: Georgia, Times, Helvetica;
+  color: #CC0000;
+}
+
+h3 {
+  font-family: Georgia, Times, Helvetica;
+  color: #565858;
+}
+
+h4 {
+  font-family: Georgia, Times, Helvetica;
+  color: #565858;
+  text-align: center;
+}
