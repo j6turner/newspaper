@@ -8,7 +8,7 @@ newspaperMaintainer.controller("ReportersCtrl",
       birthday: $scope.reporterBirthday
     });
     $scope.reporterName = null;
-    $scope.reporterEmployement = null;
+    $scope.reporterEmployment = null;
     $scope.reporterBirthday = null;
   }
 });
