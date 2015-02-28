@@ -26,24 +26,24 @@
         <ul>
           <li ng-repeat="item in filtered = (sections | filter:query)">
 
-            <span ng-click="editing = true" ng-hide="editing">
-              {{ item.name }}
-              <h6>(*click* to RENAME)
+            <!-- <span ng-click="editing = true" ng-hide="editing"> -->
+              <strong>{{ item.name }}</strong> ~ 
+              <!-- <h6>(*click* to RENAME) -->
 
               <a ng-click="SectionsFactory.deleteSection(item)">[DELETE]</a>
             </span>
 
             or
 
-            <span class="form-group" ng-show="editing" ng-submit="editing = false">
+            <!-- <span class="form-group" ng-show="editing" ng-submit="editing = false">
               <form class="form-inline" role="form">
                 <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Section Name" required />
                 <button class="btn btn-success btn-sm" type="submit">Edit & Save</button>
               </form>
-            </span>
+            </span> -->
 
             <a ui-sref="sections.reporters({ sectionID: item.id })">  &#9734; Proceed to {{ item.name }} Section</a>
-              </h6>
+              <!-- </h6> -->
 
           </li>
         </ul>
