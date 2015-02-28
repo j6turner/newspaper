@@ -1,23 +1,67 @@
 <h1>Newspaper Maintainance</h1>
 <hr noshade/>
 
-<div ng-show="sections.length">
-  <h2>Newspaper Sections</h2>
-  <ul>
-    <li ng-repeat="item in sections">
-      <a ui-sref="sections.reporters({ sectionID: item.id })">{{ item.name }}</a>
-    </li>
-  </ul>
-</div>
+<div ng-controller="SectionsCtrl">
 
-<div id="sections" class="col-md-6">
-  <h3>Add a new section:</h3>
-    <form ng-submit="SectionsFactory.addSection()" class="form-inline" role="form">
-      <div class="form-group">
-        <input type="text" ng-model="SectionsFactory.sectionName" class="form-control" placeholder="Arts & Culture" />
+  <div class="row">
+
+    <div class="searchSections">
+      <h3>Search Sections:</h3>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <input ng-model="query" type="text" class="form-control" placeholder="Obituaries">
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div id="sections" class="col-md-6">
+
+      <div id="showSections">
+        <h2 ng-show="sections.length && filtered.length">Newspaper Sections</h2>
+        <h2 ng-show="sections.length && !filtered.length">Please try a different search.</h2>
+        <ul>
+          <li ng-repeat="item in filtered = (sections | filter:query)">
+
+            <span ng-click="editing = true" ng-hide="editing">
+              {{ item.name }}
+              <h6>(*click* to RENAME)
+
+              <a ng-click="SectionsFactory.deleteSection(item)">[DELETE]</a>
+            </span>
+
+            or
+
+            <span class="form-group" ng-show="editing" ng-submit="editing = false">
+              <form class="form-inline" role="form">
+                <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Section Name" required />
+                <button class="btn btn-success btn-sm" type="submit">Edit & Save</button>
+              </form>
+            </span>
+
+            <a ui-sref="sections.reporters({ sectionID: item.id })">  &#9734; Proceed to {{ item.name }} Section</a>
+              </h6>
+
+          </li>
+        </ul>
       </div>
-      <button type="submit" class="btn btn-default">Add Section</button>
-    </form>
+
+
+      <h3>Add a new section:</h3>
+        <form ng-submit="SectionsFactory.addSection()" class="form-inline" role="form">
+          <div class="form-group">
+            <input type="text" ng-model="SectionsFactory.sectionName" class="form-control" placeholder="Arts & Culture" />
+          </div>
+          <button type="submit" class="btn btn-default">Add Section</button>
+        </form>
+
+    </div>
+
+  </div>
+
 </div>
 
 <div ui-view></div>

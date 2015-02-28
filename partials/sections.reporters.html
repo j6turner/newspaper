@@ -2,17 +2,23 @@
   <h2>{{ section.name }} Reporters</h2>
   <ul>
     <li ng-repeat="item in section.reporters">
-      {{ item.name }}
+      <strong>{{ item.name }}</strong> (Start Date: {{ item.employment}}; Birthday: {{ item.birthday }}
     </li>
   </ul>
 </div>
 
 <div id="addReporter">
-  <h2>Assign a reporter to the {{ section.name }} section:</h2>
+  <h3>Assign a reporter to the {{ section.name }} section:</h3>
   <form ng-submit="addReporter()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="reporterName" class="form-control" placeholder="Howard Beale" />
+      Employee Name: <input type="text" ng-model="reporterName" class="form-control" placeholder="Howard Beale" />
+      <br />
+      Start Date: <input type="date" ng-model="reporterEmployment" class="form-control" placeholder="1997" />
+      <br />
+      Birthday: <input type="date" ng-model="reporterbirthday" class="form-control" placeholder="Howard Beale" />
     </div>
+    <br />
+    <br />
     <button type="submit" class="btn btn-danger">Add Reporter</button>
   </form>
 </div>

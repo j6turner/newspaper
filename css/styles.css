@@ -1,4 +1,4 @@
-}body {
+body {
   border: 2px solid #2D2D2D;
   padding: 15px 15px 15px 15px;
   background-color: #E0E0E0;
@@ -24,4 +24,25 @@ h4 {
   font-family: Georgia, Times, Helvetica;
   color: #565858;
   text-align: center;
+}
+
+h5 {
+  font-family: Georgia, Times, Helvetica;
+  color: #565858;
+}
+
+h6 {
+  font-family: Georgia, Times, Helvetica;
+  color: #7D7D76;
+}
+
+.searchSections {
+  float: left;
+  border: 3px solid #2D2D2D;
+  padding: 20px 20px 20px 20px;
+  background-color: #FFFFFF;
+}
+
+span:hover {
+  cursor: pointer;
 }
