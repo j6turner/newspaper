@@ -4,7 +4,7 @@ Newspaper
 This Web app allows the newspaper owner to keep track of the paper's divisions and the reporters assigned to each division.
 
 Features include [AngularJS](https://angularjs.org/)
-and [Bootstrap](http://http://getbootstrap.com/).
+and [Bootstrap](http://getbootstrap.com/).
 
 
 Usage
