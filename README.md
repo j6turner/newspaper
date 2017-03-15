@@ -10,7 +10,7 @@ and [Bootstrap](http://getbootstrap.com/).
 Usage
 -----
 
-First, download the project to the desktop. Open a terminal window
+First, download the project to the desktop. Name the project folder "newspaper." Open a terminal window
 and change the directory by entering `$ cd Desktop/newspaper`.
 To run the app, start up a local Web server.
 
